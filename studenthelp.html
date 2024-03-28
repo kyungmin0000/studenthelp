@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STUDENT HELP</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    .button {
+        display: inline-block;
+        padding: 20px 40px;
+        font-size: 40px;
+        background-color: #ad1717;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+<h1>STUDENT HELP</h1>
+<div id="homeScreen">
+    <button class="button" onclick="goToBooks()">책</button>
+    <button class="button" onclick="goToSites()">사이트</button>
+    <button class="button" onclick="goToStationery()">필기구</button>
+</div>
+<div id="booksScreen" style="display: none;">
+    <h2>책 바로가기</h2>
+    <a href="https://www.yes24.com/Main/default.aspx?pid=123487&cosemkid=go16818920046930994&gad_source=1&gclid=Cj0KCQjwncWvBhD_ARIsAEb2HW_C3Pg7ILbuQ-hys4TPdClkbte2OD67Hoo4zOMjJoGSHruiCT0L_RMaAjmEEALw_wcB" target="_blank" class="button">YES24 바로가기</a>
+    <button class="button" onclick="goToPrevious('booksScreen')">이전</button>
+</div>
+<div id="sitesScreen" style="display: none;">
+    <h2>사이트 바로가기</h2>
+    <a href="https://www.ebsi.co.kr/ebs/pot/poti/main.ebs" target="_blank" class="button">EBSi 바로가기</a>
+    <button class="button" onclick="goToPrevious('sitesScreen')">이전</button>
+</div>
+<div id="stationeryScreen" style="display: none;">
+    <h2>필기구 바로가기</h2>
+    <a href="https://www.coupang.com/np/search?component=&q=%ED%95%84%EA%B8%B0%EA%B5%AC&channel=user" target="_blank" class="button">쿠팡 바로가기</a>
+    <button class="button" onclick="goToPrevious('stationeryScreen')">이전</button>
+</div>
+<script>
+    function goToBooks() {
+        document.getElementById('homeScreen').style.display = 'none';
+        document.getElementById('booksScreen').style.display = 'block';
+    }
+
+    function goToSites() {
+        document.getElementById('homeScreen').style.display = 'none';
+        document.getElementById('sitesScreen').style.display = 'block';
+    }
+
+    function goToStationery() {
+        document.getElementById('homeScreen').style.display = 'none';
+        document.getElementById('stationeryScreen').style.display = 'block';
+    }
+
+    function goToPrevious(currentScreenId) {
+        document.getElementById(currentScreenId).style.display = 'none';
+        document.getElementById('homeScreen').style.display = 'block';
+    }
+</script>
+</body>
+</html>
